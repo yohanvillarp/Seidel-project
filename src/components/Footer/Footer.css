@@ -28,7 +28,7 @@
 }
 .footer__list {
   list-style: none;
-  padding: 0;
+  padding: 10px;
 }
 .footer__link {
   color: #fff;
@@ -54,7 +54,7 @@
           justify-content: center;
   gap: 15px;
   list-style: none;
-  padding: 0;
+  padding: 10px;
 }
 @media (max-width: 768px) {
   .footer {

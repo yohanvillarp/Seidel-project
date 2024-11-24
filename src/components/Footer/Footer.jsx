@@ -1,5 +1,5 @@
-import React from "react";
-import "./Footer.css"; // Estilos del footer (compilado de SCSS)
+import './Footer.css';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -9,13 +9,13 @@ const Footer = () => {
         <h4 className="footer__title">Empresa</h4>
         <ul className="footer__list">
           <li>
-            <a href="/nosotros" className="footer__link">Nosotros</a>
+            <Link to="/nosotros" className="footer__link">Nosotros</Link>
           </li>
           <li>
-            <a href="/servicios" className="footer__link">Nuestros servicios</a>
+            <Link to="/servicios" className="footer__link">Nuestros servicios</Link>
           </li>
           <li>
-            <a href="/privacidad" className="footer__link">Políticas de privacidad</a>
+            <Link to="/privacidad" className="footer__link">Políticas de privacidad</Link>
           </li>
         </ul>
       </div>
@@ -25,10 +25,10 @@ const Footer = () => {
         <h4 className="footer__title">Ayuda</h4>
         <ul className="footer__list">
           <li>
-            <a href="/faq" className="footer__link">Preguntas frecuentes</a>
+            <Link to="/faq" className="footer__link">Preguntas frecuentes</Link>
           </li>
           <li>
-            <a href="/eventos" className="footer__link">Compras y eventos</a>
+            <Link to="/eventos" className="footer__link">Compras y eventos</Link>
           </li>
         </ul>
       </div>
@@ -38,17 +38,17 @@ const Footer = () => {
         <h4 className="footer__title">Síguenos</h4>
         <ul className="footer__socials">
           <li>
-            <a href="https://facebook.com" className="footer__link">
+            <Link to="https://facebook.com" className="footer__link" target='_blank'>
               <i className="fab fa-facebook"></i>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://instagram.com" className="footer__link">
+            <a href="https://instagram.com" className="footer__link" target='_blank'>
               <i className="fab fa-instagram"></i>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com" className="footer__link">
+            <a href="https://twitter.com" className="footer__link" target='_blank'>
               <i className="fab fa-twitter"></i>
             </a>
           </li>

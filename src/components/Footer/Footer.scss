@@ -24,7 +24,7 @@
   
     &__list {
       list-style: none; // Eliminar puntos
-      padding: 0;
+      padding: 10px;
     }
   
     &__link {
@@ -48,7 +48,7 @@
       justify-content: center; // Centrar iconos
       gap: 15px; // Espaciado entre iconos
       list-style: none;
-      padding: 0;
+      padding: 10px;
     }
   
     // Responsividad
