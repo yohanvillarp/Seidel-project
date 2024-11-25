@@ -1,8 +1,10 @@
 const HomeView = () => {
   return (
     <>
-        <main className="home__main">
-            Contenido del home
+        <main className="home">
+            <section className="home__section">
+              
+            </section>
         </main>
     </>
   )

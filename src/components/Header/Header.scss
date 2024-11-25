@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+
 .header {
-    background-color: aqua;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+    background-color: #1D2D44;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -12,22 +17,24 @@ width: 60px;
 }
 .header__nav{
 display: flex;
+align-items: center;
+justify-content: center;
 }
 .header__nav-list {
 list-style-type: none;
 display: flex;
 gap: 40px;
-
+margin: 0;
 height: 100%;
 }
 
 .header__nav-link {
 text-decoration: none;
 font-size: 18px;
-font-weight: bold;
 padding: 10px;
 border-radius: 10px;
 display: inline-block;
+color: white;
 
 
 &:hover {
@@ -41,6 +48,13 @@ display: inline-block;
 .header__user {
 display: flex;
 gap: 20px;
+
+  &-link{
+    color: rgb(245, 175, 226);
+    &:hover{
+      color: white;
+    }
+  }
 }
 
 

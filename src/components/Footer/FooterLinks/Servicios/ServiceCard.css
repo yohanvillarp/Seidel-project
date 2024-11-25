@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.serviceCard {
+  padding: 20px;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  /* Media queries */
+}
+.serviceCard:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.serviceCard__image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100px;
+}
+.serviceCard__content {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+}
+.serviceCard__content-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+}
+.serviceCard__content-description {
+  font-size: 18px;
+  color: #353434;
+  line-height: 1.5;
+  font-family: "Courier New", Courier, monospace;
+}
+@media (max-width: 768px) {
+  .serviceCard .serviceCard__image {
+    max-width: 150px; /* Reduce el tamaño máximo de la imagen en pantallas pequeñas */
+  }
+  .serviceCard .serviceCard__content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .serviceCard .serviceCard__image {
+    max-width: 100px; /* Reduce aún más el tamaño máximo de la imagen en pantallas muy pequeñas */
+  }
+  .serviceCard .serviceCard__content {
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 1.6;
+  }
+}

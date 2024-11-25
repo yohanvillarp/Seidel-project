@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -9,7 +10,6 @@ import Eventos from './components/Footer/FooterLinks/Eventos/Eventos';
 import Privacidad from './components/Footer/FooterLinks/Privacidad/Privacidad';
 import Servicios from './components/Footer/FooterLinks/Servicios/Servicios';
 import FAQ from './components/Footer/FooterLinks/FAQ/FAQ';
-
 
 
 function App() {

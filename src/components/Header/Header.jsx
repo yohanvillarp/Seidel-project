@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="header py-3">
       <Link to="/" className="header__logo-link">
-        <i className="fa-brands fa-digg fa-3x"></i>
+        <img src="logo.png" className='logo' />
       </Link>
       
 
