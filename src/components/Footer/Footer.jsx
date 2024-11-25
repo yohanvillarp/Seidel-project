@@ -1,5 +1,5 @@
 import './Footer.css';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -38,17 +38,17 @@ const Footer = () => {
         <h4 className="footer__title">Síguenos</h4>
         <ul className="footer__socials">
           <li>
-            <Link to="https://facebook.com" className="footer__link" target='_blank'>
+            <Link to="https://www.facebook.com/profile.php?id=61566807050447" className="footer__link" target='_blank'>
               <i className="fab fa-facebook"></i>
             </Link>
           </li>
           <li>
-            <a href="https://instagram.com" className="footer__link" target='_blank'>
+            <a href="https://www.instagram.com/seidel_store/" className="footer__link" target='_blank'>
               <i className="fab fa-instagram"></i>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com" className="footer__link" target='_blank'>
+            <a href="https://x.com/vihukstore" className="footer__link" target='_blank'>
               <i className="fab fa-twitter"></i>
             </a>
           </li>
