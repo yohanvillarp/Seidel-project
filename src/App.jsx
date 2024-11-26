@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomeView from './views/HomeView';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -13,14 +13,26 @@ import FAQ from './components/Footer/FooterLinks/FAQ/FAQ';
 
 
 function App() {
+
   return (
     <Router>
-      <div className="app">
-        <Header />
+      <MainContent />
+    </Router>
+  )
+}
+
+function MainContent(){
+
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+  console.log(isLoginPage);
+
+  return(
+    <div className="app">
+        {! isLoginPage && <Header />}
           <main className="app__main">
             <Routes>
               <Route path="/" element=  {<HomeView />} />
-
               <Route path="/nosotros" element=  {<Nosotros />} />
               <Route path="/servicios" element=  {<Servicios />} />
               <Route path="/privacidad" element=  {<Privacidad />} />
@@ -28,9 +40,8 @@ function App() {
               <Route path="/eventos" element=  {<Eventos />} />
             </Routes>
           </main>
-        <Footer />
+        {! isLoginPage && <Footer />}
       </div>
-    </Router>
   )
 }
 

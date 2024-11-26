@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 
 
 .footer {
@@ -8,9 +8,8 @@
     display: flex;
     justify-content: space-around; // Centrar secciones
     flex-wrap: wrap;
-    font-family: 'Roboto', sans-serif;
+    font-family:sans-serif;
     
-  
     &__section {
       flex: 1;
       min-width: 200px;
@@ -24,7 +23,8 @@
       color: #fff;
       border-bottom: 2px solid #00aaff; // Línea decorativa
       padding-bottom: 5px;
-      display: inline-block; // Línea ajustada al texto
+      display: inline-block; 
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
   
     &__list {

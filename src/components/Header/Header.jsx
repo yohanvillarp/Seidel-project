@@ -37,7 +37,7 @@ const Header = () => {
           <i className="fa-regular fa-bell fa-lg"></i>
         </Link>
 
-        <Link to="/" className='header__user-link'>
+        <Link to="/login" className='header__user-link'>
           <i className="fa-regular fa-user fa-lg"></i>
         </Link>
         

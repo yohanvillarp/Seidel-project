@@ -1,0 +1,23 @@
+.qcard {
+  padding: 10px;
+  border: 1px solid rgb(186, 170, 207);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+.qcard:hover {
+  border-color: black;
+}
+.qcard__content-title {
+  font-weight: bold;
+  list-style: none;
+}
+.qcard__content-title:hover {
+  color: blue;
+  -webkit-text-decoration: underline blue;
+          text-decoration: underline blue;
+}
