@@ -1,0 +1,101 @@
+// Colores principales
+$color-title: #DAA520;
+$color-text: #6A7FDB; 
+$color-border: rgb(172, 168, 184);
+$color-footer-bg: black;
+$color-footer-hover: #f0f0f0;
+$color-footer-text: white;
+$color-separator: violet;
+
+// Fuentes y tamaños
+$font-family-title: Georgia, 'Times New Roman', Times, serif;
+$font-family-button: 'Courier New', monospace;
+$font-family-content: 'Times New Roman', Times, serif;
+$font-size-title: 25px;
+$font-size-content: 15px;
+$font-size-footer: 14px;
+
+// Espaciados y medidas
+$card-padding: 10px;
+$card-margin: 10px;
+$card-width: 47%;
+$footer-padding: 10px;
+
+
+.offerCard {
+  padding: $card-padding;
+  color: $color-border;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-border;
+  margin: $card-margin;
+  width: $card-width;
+  
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  &:hover {
+    border-color: black;
+  }
+
+  &__header {
+    width: 100%;
+    text-align: center;
+
+    .offerCard__title {
+      font-size: $font-size-title;
+      font-family: $font-family-title;
+      margin: 0;
+      color: $color-title;
+    }
+  }
+
+  &__separator {
+    
+    height: 2px;
+    width: 100%;
+    background-color: $color-separator;
+    margin: 10px 0;
+  }
+
+  &__body {
+    font-family: $font-family-content;
+    width: 100%;
+    text-align: center;
+    color: $color-text;
+    
+
+    .offerCard__content {
+      font-size: $font-size-content;
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    font-family: $font-family-button;
+    &--copy {
+      background-color: $color-footer-bg;
+      color: $color-footer-text;
+      width: 100%;
+      padding: $footer-padding;
+      border: 1px solid black;
+      font-size: $font-size-footer;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color-footer-hover;
+        color: black;
+      }
+    }
+
+    &--text {
+      font-size: $font-size-footer;
+    }
+  }
+}

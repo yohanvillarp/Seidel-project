@@ -1,21 +1,23 @@
-.about-us__title {
-  margin-bottom: 20px;
+.offers__title {
   padding: 10px;
   font-size: 38px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-.about-us__content {
-  text-align: center;
-  gap: 50px;
+.offers__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.offers__description {
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
 }

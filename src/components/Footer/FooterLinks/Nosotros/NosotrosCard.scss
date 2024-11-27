@@ -1,0 +1,38 @@
+.nosotrosCard{
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    &:hover{
+        transform: translateY(-10px);
+        transition: all 1s ease;
+        border-color: black ;
+    }
+
+    &__title{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        &--text{
+            font-family: cursive;
+            font-size: 38px;
+        }
+    }
+
+    &__body{
+        padding: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}

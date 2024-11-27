@@ -8,7 +8,6 @@ const Header = () => {
         <img src="logo.png" className='logo' />
       </Link>
       
-
       <nav className="header__nav">
         <ul className="header__nav-list d-flex gap-4">
           <li>
@@ -25,6 +24,9 @@ const Header = () => {
 
       <div className="header__user d-flex gap-3">
 
+        <Link to="/ofertas" className="header__user-link">
+          <i className="fa-solid fa-piggy-bank fa-lg"></i>
+        </Link>
         <Link to="/"  className='header__user-link'>
           <i className="fa-solid fa-bag-shopping fa-lg"></i>
         </Link>
