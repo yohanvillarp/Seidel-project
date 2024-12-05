@@ -11,13 +11,13 @@ const Header = () => {
       <nav className="header__nav">
         <ul className="header__nav-list d-flex gap-4">
           <li>
-            <Link to="/" className="header__nav-link">HOMBRES</Link>
+            <Link to="/hombres" className="header__nav-link">HOMBRES</Link>
           </li>
           <li>
-            <Link to="/" className="header__nav-link">MUJERES</Link>
+            <Link to="/mujeres" className="header__nav-link">MUJERES</Link>
           </li>
           <li>
-            <Link to="/"  className="header__nav-link">NIÑOS</Link>
+            <Link to="/niños"  className="header__nav-link">NIÑOS</Link>
           </li>
         </ul>
       </nav>

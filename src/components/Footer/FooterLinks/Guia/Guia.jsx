@@ -1,8 +1,15 @@
-import React from 'react'
+import Article from '../../../Articulo/Articulo'
 
 const Guia = () => {
   return (
-    <div>Guia</div>
+    <div className="guia">
+
+      <Article 
+        title="Guía de uso"
+        
+      />
+
+    </div>
   )
 }
 

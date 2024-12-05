@@ -11,10 +11,11 @@ import Privacidad from './components/Footer/FooterLinks/Privacidad/Privacidad';
 import Servicios from './components/Footer/FooterLinks/Servicios/Servicios';
 import FAQ from './components/Footer/FooterLinks/FAQ/FAQ';
 import Ofertas from './components/Ofertas/Ofertas';
-
+import Productos from './components/Productos/Productos';
+import LoginView from './views/LoginView';
+import { filter } from './data/filter';
 
 function App() {
-
   return (
     <Router>
       <MainContent />
@@ -34,12 +35,17 @@ function MainContent(){
           <main className="app__main">
             <Routes>
               <Route path="/" element=  {<HomeView />} />
+              <Route path="/hombres" element=  {<Productos filter={filter[0]}/> } />
+              <Route path="/mujeres" element=  {<Productos filter={filter[1]}/> } />
+              <Route path="/niños" element=  {<Productos filter={filter[2]}/> } />
+            
               <Route path="/ofertas" element=  {<Ofertas />} />
               <Route path="/nosotros" element=  {<Nosotros />} />
               <Route path="/servicios" element=  {<Servicios />} />
               <Route path="/privacidad" element=  {<Privacidad />} />
               <Route path="/faq" element=  {<FAQ />} />
               <Route path="/guia" element=  {<Guia />} />
+              <Route path="/login" element={<LoginView />} /> 
             </Routes>
           </main>
         {! isLoginPage && <Footer />}
@@ -48,3 +54,4 @@ function MainContent(){
 }
 
 export default App
+

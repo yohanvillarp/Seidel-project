@@ -1,0 +1,23 @@
+.productos{
+    padding-left: 30px;
+    padding-right: 30px;
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__header{
+        
+        &--title{
+            font-size: 38px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        &--text{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+        }
+    }
+}

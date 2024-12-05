@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* ProductCard.css */
+/* Estilo base para la tarjeta */
+.product-card {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  width: 100%;
+  max-width: 18rem; /* Tamaño máximo de la tarjeta */
+  min-height: 350px; /* Altura mínima */
+  margin: 10px auto; /* Espaciado automático para centrado */
+}
+
+/* Cambios al pasar el mouse */
+.product-card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de la tarjeta */
+.product-card__image {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Título de la tarjeta */
+.product-card__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Descripción */
+.product-card__description {
+  font-size: 1rem;
+  color: #555;
+  padding: 0 10px;
+}
+
+/* Pie de la tarjeta */
+.product-card__footer {
+  margin-top: auto;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+/* Precio */
+.product-card__price {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Hacer que la tarjeta sea más pequeña en pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 16rem; /* Reducir tamaño en pantallas pequeñas */
+    min-height: 320px;
+  }
+}
+/* Hacer que la tarjeta sea aún más pequeña en pantallas muy pequeñas */
+@media (max-width: 576px) {
+  .product-card {
+    max-width: 14rem; /* Reducir aún más en pantallas muy pequeñas */
+    min-height: 280px;
+  }
+}
