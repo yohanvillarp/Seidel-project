@@ -23,9 +23,15 @@
   /* Imagen de la tarjeta */
   .product-card__image {
     width: 100%;
-    height: 180px;
+    height: 245px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
+    transition: ease-in-out transform 1s;
+    margin-bottom: 10px;
+  }
+
+  .product-card__image:hover{
+    transform: scale(1.1);
   }
   
   /* Título de la tarjeta */

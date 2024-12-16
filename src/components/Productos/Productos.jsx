@@ -1,65 +1,85 @@
-import React from 'react'
+import { useParams } from 'react-router-dom';
 import ProductCard from './ProductCard';
-import { useState , useEffect } from 'react';
-import { getProductos } from '../../services/productServices';
+import { useState, useEffect } from 'react';
+import { getProductosPorCategoria } from '../../services/productServices';
 import './Productos.css'
+import FilterCard from './FilterCard';
+import { filtrarProductos } from '../../utils/filtrarProductos';
+import { getCategoriaPorNombre } from '../../services/categoriaServices';
 
-const Productos = ({filter}) => {
-  let personaInt='man';
+const Productos = () => {
+
+  const { nombreCategoria } = useParams();
+  const [categoria, setCategoria] = useState({});
 
   const [productos, setProductos] = useState([]);
-  
-  if(filter.persona===personaInt)
-    personaInt = 'hombres'
-  else if(filter.persona === 'woman') 
-    personaInt = 'mujeres'
-  else
-    personaInt = 'niños'
-    
+  const [filtros, setFiltros] = useState({
+    marca: 'all',
+    precio: 'all',
+    color: 'all',
+  })
 
-  useEffect(() =>{
-    try{
-      const listaProductos = async () => {
-        const productos = await getProductos();
-        const filtro = productos.filter(producto =>
-          producto.genero=== filter.persona && producto.id!=undefined
-        );
-        setProductos(filtro);
+  useEffect(() => {
+    try {
+      const obtenerCategoria = async () => {
+        const categoriaObtenida = await getCategoriaPorNombre(nombreCategoria);
+        console.log(categoriaObtenida);
+        setCategoria(categoriaObtenida);
       }
-      listaProductos();
-    }catch(e){
+      obtenerCategoria();
+    } catch (e) {
       console.error(e);
     }
-  }, [filter.persona]);
+  }, [nombreCategoria]);
+
+
+  useEffect(() => {
+    try {
+      const listaProductos = async () => {
+        const productos = await getProductosPorCategoria(nombreCategoria);
+        setProductos(productos);
+      }
+      listaProductos();
+
+    } catch (e) {
+      console.error(e);
+    }
+  }, [nombreCategoria]);
+
+  //retorna todos los productos filtrados
+  const productosFiltrados = filtrarProductos(productos, filtros);
 
   return (
     <section className="productos">
       <header className="productos__header">
         <h1 className="productos__header--title">
-          Zapatillas para {personaInt} [{productos.length}]
+          Zapatillas para {nombreCategoria} [{productos.length}]
         </h1>
         <p className="productos__header--text">
-          {filter.text}
+          {categoria.nombre}
         </p>
+        
       </header>
-    
-    <main className="productos__content">
+      <FilterCard filtros={filtros} setFiltros={setFiltros} />
+      <main className="productos__content">
       
-    {productos.map((producto) =>(
-      <ProductCard
-        id={producto.id}
-        key={producto.id}
-        nombre={producto.nombre}
-        marca = {producto.marca}
-        descripcion={producto.descripcion}
-        color={producto.color}
-        precio={producto.precio}
-        foto = {producto.foto}
-      />
-    ))}
-    </main>
+        {productosFiltrados.map((producto) => (
+          <ProductCard
+            key={producto.id}
+            id={producto.id_producto}
+            marca={producto.marca}
+            modelo={producto.modelo}
+            categoria={producto.categoria}
+            precio={producto.precio}
+            imagenes={producto.imagenes}
+            fechaAgregado={producto.fechaAgregado}
+            detalles={producto.detalles}
+            descripcion={producto.descripcion}
+          />
+        ))}
+      </main>
     </section>
-    
+
   )
 }
 

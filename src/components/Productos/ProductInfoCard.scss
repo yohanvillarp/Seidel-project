@@ -1,0 +1,79 @@
+.infoProduct {
+  
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  
+  &__image {
+    height: auto;
+    object-fit: contain;
+    width: 600px;
+  }
+
+  &__info {
+    margin-left: 2rem;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  &__price {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: blue;
+  }
+
+  &__talla {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  &__boton {
+    background-color: rgb(121, 99, 99);
+    border: none;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  &__boton:nth-child(2) {
+    background-color: white;
+    border: 1px solid black;
+    color: rgb(90, 127, 214);
+  }
+
+  &__footer {
+    display: flex;
+    padding: 50px;
+    gap: 30px;
+    h3{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+    p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        
+    }
+  }
+
+  &__description {
+    width: 70%;
+  }
+
+  &__detalles {
+    width: 50%;
+  }
+}

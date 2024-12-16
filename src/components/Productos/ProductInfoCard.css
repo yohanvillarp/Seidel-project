@@ -1,0 +1,85 @@
+.infoProduct__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.infoProduct__image {
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 600px;
+}
+.infoProduct__info {
+  margin-left: 2rem;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.infoProduct__title {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.infoProduct__price {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: blue;
+}
+.infoProduct__talla {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.infoProduct__botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.infoProduct__boton {
+  background-color: rgb(121, 99, 99);
+  border: none;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.infoProduct__boton:nth-child(2) {
+  background-color: white;
+  border: 1px solid black;
+  color: rgb(90, 127, 214);
+}
+.infoProduct__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 50px;
+  gap: 30px;
+}
+.infoProduct__footer h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.infoProduct__footer p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.infoProduct__description {
+  width: 70%;
+}
+.infoProduct__detalles {
+  width: 50%;
+}

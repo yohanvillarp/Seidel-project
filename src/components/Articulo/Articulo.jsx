@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Articulo = ({title}) => {
   return (
     <section className="article">

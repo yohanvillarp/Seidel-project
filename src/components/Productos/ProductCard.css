@@ -28,10 +28,18 @@
 /* Imagen de la tarjeta */
 .product-card__image {
   width: 100%;
-  height: 180px;
+  height: 245px;
   -o-object-fit: cover;
      object-fit: cover;
   border-bottom: 1px solid #ddd;
+  -webkit-transition: ease-in-out transform 1s;
+  transition: ease-in-out transform 1s;
+  margin-bottom: 10px;
+}
+
+.product-card__image:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 /* Título de la tarjeta */

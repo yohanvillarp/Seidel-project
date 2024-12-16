@@ -1,0 +1,35 @@
+.filtro{
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 15px;
+    justify-content: space-evenly;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    
+    &__item{
+        margin-right: 1rem;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__label{
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+    &__select{
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #333;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+}

@@ -1,13 +1,13 @@
 import './QCard.css';
 
-const QCard = ({ title, pregunta }) => {
+const QCard = ({ pregunta, respuesta }) => {
   return (
     <div className="qcard">
       <details className="qcard__content">
         <summary className="qcard__content-title">
-          {title}
+          {pregunta}
         </summary>
-        <p className="qcard__content-content">{pregunta}</p>
+        <p className="qcard__content-content">{respuesta}</p>
       </details>
     </div>
   );

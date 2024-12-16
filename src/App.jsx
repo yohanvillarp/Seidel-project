@@ -13,7 +13,8 @@ import FAQ from './components/Footer/FooterLinks/FAQ/FAQ';
 import Ofertas from './components/Ofertas/Ofertas';
 import Productos from './components/Productos/Productos';
 import LoginView from './views/LoginView';
-import { filter } from './data/filter';
+import { categorias } from './data/categorias';
+import ProductInfoCad from './components/Productos/ProductInfoCard';
 
 function App() {
   return (
@@ -35,10 +36,8 @@ function MainContent(){
           <main className="app__main">
             <Routes>
               <Route path="/" element=  {<HomeView />} />
-              <Route path="/hombres" element=  {<Productos filter={filter[0]}/> } />
-              <Route path="/mujeres" element=  {<Productos filter={filter[1]}/> } />
-              <Route path="/niños" element=  {<Productos filter={filter[2]}/> } />
-            
+              <Route path="/:nombreCategoria" element=  {<Productos/> } />
+              <Route path="/modelo/:id" element= {<ProductInfoCad />} />
               <Route path="/ofertas" element=  {<Ofertas />} />
               <Route path="/nosotros" element=  {<Nosotros />} />
               <Route path="/servicios" element=  {<Servicios />} />
@@ -54,4 +53,3 @@ function MainContent(){
 }
 
 export default App
-
