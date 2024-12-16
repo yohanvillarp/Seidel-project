@@ -83,3 +83,19 @@
 .infoProduct__detalles {
   width: 50%;
 }
+@media screen and (max-width: 1754px) {
+  .infoProduct__image {
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .infoProduct__image {
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
+  }
+}
