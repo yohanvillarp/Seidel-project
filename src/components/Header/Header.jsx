@@ -27,7 +27,7 @@ const Header = () => {
         <Link to="/ofertas" className="header__user-link">
           <i className="fa-solid fa-piggy-bank fa-lg"></i>
         </Link>
-        <Link to="/"  className='header__user-link'>
+        <Link to="/bag"  className='header__user-link'>
           <i className="fa-solid fa-bag-shopping fa-lg"></i>
         </Link>
         

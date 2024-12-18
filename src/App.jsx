@@ -15,6 +15,7 @@ import Productos from './components/Productos/Productos';
 import LoginView from './views/LoginView';
 import { categorias } from './data/categorias';
 import ProductInfoCad from './components/Productos/ProductInfoCard';
+import BagView from './views/BagView';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function MainContent(){
           <main className="app__main">
             <Routes>
               <Route path="/" element=  {<HomeView />} />
+
+              <Route path="/bag" element={<BagView />} />
               <Route path="/:nombreCategoria" element=  {<Productos/> } />
               <Route path="/modelo/:id" element= {<ProductInfoCad />} />
               <Route path="/ofertas" element=  {<Ofertas />} />
