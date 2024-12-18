@@ -1,0 +1,131 @@
+/* Importar las fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Fuente de letra como en la imagen */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente principal */
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.bag {
+  padding: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente para todo */
+}
+
+.bag__layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bag__products {
+  flex: 2;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.bag__title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.bag__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.bag__image {
+  width: 100px;
+  height: 100px;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.bag__details {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.bag__details h3 {
+  font-size: 1rem;
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+
+.bag__talla,
+.bag__price {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.bag__price {
+  font-weight: bold;
+  color: #000;
+}
+
+.bag__delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.bag__delete-btn:hover {
+  color: #ff0000;
+}
+
+.bag__summary {
+  flex: 1;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  height: fit-content;
+}
+
+.bag__summary h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.bag__summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.bag__total {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.bag__checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+.bag__checkout-btn:hover {
+  background-color: #333;
+}
