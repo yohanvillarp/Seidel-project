@@ -1,56 +1,49 @@
-import './Banner.css'
-import React, { useState, useEffect } from 'react'; 
+import './Banner.css';
+import React, { useState, useEffect } from 'react';
 
-const Banner = ({imgBanner}) => {
-
-  //estado para frase actual
-  const [currentFraseIndex, setCurremtFraseIndex] = React.useState(0);
+const Banner = ({ imgBanner }) => {
+  // Estado para manejar la frase actual
+  const [currentFraseIndex, setCurrentFraseIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect( () => {
-    const interval = setInterval( () => {
-      setCurremtFraseIndex((prevIndex) => (prevIndex + 1) % frases.length);
-  } , 7000);
-  return () => clearInterval(interval);
-},[]);
+  // Frases del banner
+  const frases = [
+    { lema: "¡Celebra la Navidad con estilo!" },
+    { lema: "¡Regala sonrisas esta Navidad con nuestras zapatillas!" },
+    { lema: "Este diciembre, camina con alegría y comodidad" },
+  ];
 
-// Simular carga y comprobar cuando la imagen está lista
-useEffect(() => {
-  const img = new Image();
-  img.src = imgBanner;
-  img.onload = () => {
-    setIsLoading(false);
-  };
-}, [imgBanner]);
+  // Cambiar la frase cada 7 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFraseIndex((prevIndex) => (prevIndex + 1) % frases.length);
+    }, 7000); // 7 segundos
+    return () => clearInterval(interval);
+  }, [frases.length]);
 
-if (isLoading) {
-  return null; //es posible mostrar un loader
-}
+  // Simular carga de la imagen
+  useEffect(() => {
+    const img = new Image();
+    img.src = imgBanner;
+    img.onload = () => {
+      setIsLoading(false);
+    };
+  }, [imgBanner]);
+
+  // Mostrar loader mientras carga la imagen
+  if (isLoading) {
+    return <div className="banner__loading">Cargando...</div>;
+  }
 
   return (
-      <div className="banner">
-        <img src={imgBanner} alt="banner" className="banner__img" />
-        <p className="banner__text">{frases[currentFraseIndex].lema}</p>
-        <button className="banner__btn">
-          <i className="fa-solid fa-gifts"></i>
-          Comprar ahora</button> 
-      </div>
+    <div className="banner">
+      <img src={imgBanner} alt="Banner principal" className="banner__img" />
+      <p className="banner__text">{frases[currentFraseIndex].lema}</p>
+      <button className="banner__btn">
+        <i className="fa-solid fa-gifts"></i> Comprar ahora
+      </button>
+    </div>
   );
 };
 
 export default Banner;
-
-
-
-const frases = [
-    {
-      lema : "¡Celebra la Navidad con estilo!"
-    },
-    {
-      lema :"¡Regala sonrisas esta Navidad con nuestras zapatillas!"
-    },
-    {
-      lema : "Este diciembre, camina con alegría y comodidad"
-    }
-  ]
-
