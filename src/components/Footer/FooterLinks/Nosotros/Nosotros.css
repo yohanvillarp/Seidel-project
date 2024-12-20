@@ -1,8 +1,81 @@
+@charset "UTF-8";
 .about-us__title {
   margin-bottom: 20px;
   padding: 10px;
   font-size: 38px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.about-us__intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px; /* Espacio razonable entre el texto y la imagen */
+  margin-bottom: 50px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .about-us__intro {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    gap: 15px; /* Más espacio en pantallas pequeñas */
+  }
+}
+.about-us__intro-text {
+  -webkit-box-flex: 1.2;
+      -ms-flex: 1.2;
+          flex: 1.2; /* Aumenta el espacio que ocupa el texto hacia la derecha */
+  text-align: left; /* Mantiene el texto alineado hacia la izquierda */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+}
+.about-us__intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+.about-us__intro-text p {
+  font-size: 1rem;
+  margin-bottom: 15px; /* Espaciado uniforme */
+  color: #555;
+  line-height: 1.6;
+}
+.about-us__intro-logo {
+  -webkit-box-flex: 0.8;
+      -ms-flex: 0.8;
+          flex: 0.8; /* Reduce el espacio que ocupa la imagen */
+  text-align: center;
+}
+.about-us__intro-logo img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .about-us__intro-logo img {
+    margin: 10px 0;
+  }
 }
 .about-us__content {
   text-align: center;
@@ -18,4 +91,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.about-us__map {
+  margin-top: 50px;
+  text-align: center;
+}
+.about-us__map--title {
+  font-size: 1.8rem;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 20px;
+  color: #333;
+}
+.about-us__map iframe {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }

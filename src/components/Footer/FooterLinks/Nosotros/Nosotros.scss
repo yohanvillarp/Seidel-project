@@ -1,20 +1,89 @@
-.about-us{
-    
-    &__title{
-        margin-bottom: 20px;
-        padding: 10px;
-        font-size: 38px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        
+.about-us {
+    &__title {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 38px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+  
+    &__intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px; /* Espacio razonable entre el texto y la imagen */
+      margin-bottom: 50px;
+      padding: 20px;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px; /* Más espacio en pantallas pequeñas */
+      }
+    }
+  
+    &__intro-text {
+      flex: 1.2; /* Aumenta el espacio que ocupa el texto hacia la derecha */
+      text-align: left; /* Mantiene el texto alineado hacia la izquierda */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 10px;
+  
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+      }
+  
+      p {
+        font-size: 1rem;
+        margin-bottom: 15px; /* Espaciado uniforme */
+        color: #555;
+        line-height: 1.6;
+      }
+    }
+  
+    &__intro-logo {
+      flex: 0.8; /* Reduce el espacio que ocupa la imagen */
+      text-align: center;
+  
+      img {
+        max-width: 250px;
+        height: auto;
+        border-radius: 10px;
+  
+        @media (max-width: 768px) {
+          margin: 10px 0;
+        }
+      }
+    }
+  
+    &__content {
+      text-align: center;
+      gap: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
     }
 
-    &__content{
-        
+    &__map {
+        margin-top: 50px;
         text-align: center;
-        gap: 50px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-}
+    
+        &--title {
+          font-size: 1.8rem;
+          font-family: 'Arial', sans-serif;
+          margin-bottom: 20px;
+          color: #333;
+        }
+    
+        iframe {
+          border-radius: 10px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+  }
+  
