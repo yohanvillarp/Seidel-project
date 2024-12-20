@@ -3,14 +3,18 @@ import { useState, useEffect } from 'react';
 import { getProductoPorId } from '../../services/productServices';
 import './ProductInfoCard.css';
 import Talla from './Talla';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+
 
 const ProductInfoCard = () => {
 
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [producto, setProducto] = useState({});
   const [imagenes, setImagenes] = useState([]);
-
+  const [tallaSeleccionada, setTallaSeleccionada] = useState(null);
 
   useEffect(() => {
     try {
@@ -20,12 +24,51 @@ const ProductInfoCard = () => {
 
       }
       obtenerProducto();
-      console.log(producto.imagenes)
-
     } catch (e) {
       console.error(e);
     }
   }, [id]);
+
+  const handleAddBag = async (talla, color) => {
+    const bolsaActual = JSON.parse(localStorage.getItem('bolsa')) || []; 
+
+    const productoEnBolsa = bolsaActual.some((producto) => producto.id === id);
+    if(productoEnBolsa){
+      Swal.fire({
+        title: '¡Ya estás en tu bolsa!',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+      })
+      return;
+    }
+    else if(tallaSeleccionada === null){
+      Swal.fire({
+        title: '¡Debes seleccionar una talla!',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+      })
+      return;
+    }
+
+    const nuevoProducto = { id, talla , color};
+    const nuevaBolsa = [...bolsaActual, nuevoProducto];
+    localStorage.setItem('bolsa', JSON.stringify(nuevaBolsa));
+
+    const respuesta = await Swal.fire({
+      title: '¡Añadido a la bolsa! ¿Desea revisarla?',
+      icon: 'success',
+      confirmButtonText: 'VER AHORA',
+      showCancelButton: true,
+      cancelButtonText: 'NO POR EL MOMENTO',
+      confirmButtonColor: '#4CAF50',
+      CancelButtonColor : '#d33'
+    })
+
+    if(respuesta.isConfirmed){
+      navigate('/bag');
+    }
+
+  }
 
   return (
     <section className='infoProduct'>
@@ -51,13 +94,14 @@ const ProductInfoCard = () => {
           <div className='infoProduct__talla'>
 
             {tallas.map((talla) => (
-              <Talla nroTalla={talla} key={talla} />
+              <Talla nroTalla={talla} key={talla} tallaSeleccionada={tallaSeleccionada} 
+              setTallaSeleccionada={setTallaSeleccionada}/>
             ))}
 
           </div>
 
           <div className='infoProduct__botones'>
-            <button className='infoProduct__boton'>
+            <button className='infoProduct__boton' onClick={() => handleAddBag(tallaSeleccionada, 'blanco')}>
               <span>Añadir a la bolsa</span>
             </button>
             <button className='infoProduct__boton'>

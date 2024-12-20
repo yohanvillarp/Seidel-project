@@ -1,7 +1,11 @@
 import './Talla.css';
-const Talla = ({nroTalla}) => {
+import { useState } from 'react';
+const Talla = ({nroTalla, tallaSeleccionada, setTallaSeleccionada}) => { 
+  
   return (
-    <button className='talla'>
+    <button
+    className={`talla ${tallaSeleccionada === nroTalla ? 'talla--active' : ''}`}
+    onClick={() => setTallaSeleccionada(nroTalla)}>
         {nroTalla}
     </button>
   )

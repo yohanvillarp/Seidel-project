@@ -16,3 +16,7 @@
           align-items: center;
   color: white;
 }
+.talla--active {
+  background-color: white;
+  color: black;
+}

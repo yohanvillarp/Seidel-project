@@ -76,4 +76,20 @@
   &__detalles {
     width: 50%;
   }
+
+  @media screen and (max-width: 1754px) {
+    &__image {
+      height: auto;
+      object-fit: contain;
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 1160px) {
+    &__image {
+      height: auto;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
 }
