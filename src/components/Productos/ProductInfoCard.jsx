@@ -5,7 +5,8 @@ import './ProductInfoCard.css';
 import Talla from './Talla';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-
+import { getVariantesPorIdProducto } from '../../services/varianteService';
+import Color from './Color';
 
 const ProductInfoCard = () => {
 
@@ -13,6 +14,9 @@ const ProductInfoCard = () => {
   const { id } = useParams();
 
   const [producto, setProducto] = useState({});
+  const [variantes, setVariantes] = useState([]);
+  const [tallas, setTallas] = useState([]);
+  const [colores, setColores] = useState([]);
   const [imagenes, setImagenes] = useState([]);
   const [tallaSeleccionada, setTallaSeleccionada] = useState(null);
 
@@ -22,6 +26,22 @@ const ProductInfoCard = () => {
         const productoObtenido = await getProductoPorId(id);
         setProducto(productoObtenido);
 
+        const variantesObtenidas = await getVariantesPorIdProducto(id);
+        setVariantes(variantesObtenidas);
+
+        const tallasUnicas = variantesObtenidas
+          .map(variante => variante.talla.tallaEur) // 
+          .filter((value, index, self) => self.indexOf(value) === index);
+
+          const coloresUnicos = variantesObtenidas
+          .map(variante => variante.color)
+          .filter(
+            (color, index, self) =>
+              self.findIndex(c => c.idColor === color.idColor) === index
+          );
+
+        setTallas(tallasUnicas);
+        setColores(coloresUnicos);
       }
       obtenerProducto();
     } catch (e) {
@@ -86,15 +106,25 @@ const ProductInfoCard = () => {
           <h1 className='infoProduct__title'>{producto.modelo}</h1>
           <p className='infoProduct__price'>S/.{producto.precio}</p>
           
-          
+          <p className='infoProduct__seleccion-title'>Selecciona un color</p>
           <div className='infoProduct__color'>
-
+            {
+              colores.map((color) => (
+                <Color 
+                key={color.idColor} 
+                nombre={color.nombre}
+                hexa={color.hexadecimal} />
+              ))
+            }
           </div>
-          <p>Selecciona tú talla</p>
+          <p className='infoProduct__seleccion-title'>Selecciona tú talla</p>
           <div className='infoProduct__talla'>
 
             {tallas.map((talla) => (
-              <Talla nroTalla={talla} key={talla} tallaSeleccionada={tallaSeleccionada} 
+              <Talla 
+              key = {talla}
+              nroTalla={talla}
+              tallaSeleccionada={tallaSeleccionada} 
               setTallaSeleccionada={setTallaSeleccionada}/>
             ))}
 
@@ -127,9 +157,6 @@ const ProductInfoCard = () => {
 
 export default ProductInfoCard
 
-let tallas = [
-  38, 39, 40, 41, 42, 43, 44, 45, 46, 47
-]
 let colors = [
   'rojo', 'azul', 'amarillo', 'verde', 'naranja', 'gris'
 ]

@@ -1,3 +1,18 @@
+.infoProduct__seleccion-title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 28px;
+  color: rgb(90, 127, 214);
+}
+.infoProduct__color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
 .infoProduct__content {
   display: -webkit-box;
   display: -ms-flexbox;

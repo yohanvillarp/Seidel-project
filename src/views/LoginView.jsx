@@ -5,7 +5,7 @@ const LoginView = () => {
     return (
         <div className="login">
             <h1 className='login__title'>Login</h1>
-            <form className="login__form" >
+            <form className="login__form">
                 <input type="text" placeholder="Ingrese su nombre de usuario" />
                 <input type="password" placeholder="Ingrese su contraseña" />
                 <button type="submit">Login</button>

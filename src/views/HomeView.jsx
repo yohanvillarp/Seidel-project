@@ -49,7 +49,6 @@ const HomeView = () => {
 
   return (
     <div className="home">
-<<<<<<< HEAD
       {/* Banner */}
       <div className="home__banner">
         <Banner imgBanner={banner} />
@@ -84,11 +83,6 @@ const HomeView = () => {
           ))}
         </div>
       </div>
-=======
-      <div className="home__banner">
-        <Banner imgBanner={banner} />
-      </div>
->>>>>>> main
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import './Talla.css';
-import { useState } from 'react';
 const Talla = ({nroTalla, tallaSeleccionada, setTallaSeleccionada}) => { 
   
   return (
